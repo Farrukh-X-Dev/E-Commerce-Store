@@ -14,7 +14,6 @@ import FashionPolo from './assets/images/FashionPolo.png';
 import PoloShirt from './assets/images/PoloShirt.png';
 import Scarf from './assets/images/Scarf.png';
 import mensTanks from './assets/images/mensTanks.png';
-import casual from './assets/images/casual.png';
 
 let nav_items = [
     {path :'/' , element:'Home' } ,
@@ -131,9 +130,6 @@ let ForyouProducts = [
     }
   ];
   
-
-
-
 
 export {nav_items , site_images , productsShort , productsLong , ForyouProducts}
 

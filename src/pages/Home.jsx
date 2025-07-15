@@ -1,5 +1,5 @@
 import React from 'react'
-import { productsLong, productsShort, site_images } from '../config' 
+import { ForyouProducts, productsLong, productsShort, site_images } from '../config' 
 import { BiPhoneCall } from 'react-icons/bi'
 import ProductShort from '../components/ProductShort'
 import ProductWide from '../components/ProductWide'
@@ -31,7 +31,7 @@ const Home = () => {
       {/* Products Section */}
 
       <div className='mt-20 flex w-full justify-center gap-10 '>
-      <ProductShort  ProduForYoucts={productsShort.slice(0,2)} />
+      <ProductShort  Products={productsShort.slice(0,2)} />
       <ProductWide   Products={productsLong.slice(0,1)}/>
       </div>
 
@@ -42,7 +42,7 @@ const Home = () => {
     
     {/* Just For You Section */}
 
-    <ForYou data={'h'} />
+    <ForYou data={ForyouProducts} />
 
     </>
 
