@@ -3,6 +3,7 @@ import { productsLong, productsShort, site_images } from '../config'
 import { BiPhoneCall } from 'react-icons/bi'
 import ProductShort from '../components/ProductShort'
 import ProductWide from '../components/ProductWide'
+import ForYou from '../components/ForYou'
 
 const Home = () => {
   return (
@@ -30,7 +31,7 @@ const Home = () => {
       {/* Products Section */}
 
       <div className='mt-20 flex w-full justify-center gap-10 '>
-      <ProductShort  Products={productsShort.slice(0,2)} />
+      <ProductShort  ProduForYoucts={productsShort.slice(0,2)} />
       <ProductWide   Products={productsLong.slice(0,1)}/>
       </div>
 
@@ -39,6 +40,10 @@ const Home = () => {
       <ProductShort  Products={productsShort.slice(2,4)} />
       </div>
     
+    {/* Just For You Section */}
+
+    <ForYou data={'h'} />
+
     </>
 
   )
