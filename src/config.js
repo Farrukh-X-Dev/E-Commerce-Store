@@ -14,6 +14,10 @@ import FashionPolo from './assets/images/FashionPolo.png';
 import PoloShirt from './assets/images/PoloShirt.png';
 import Scarf from './assets/images/Scarf.png';
 import mensTanks from './assets/images/mensTanks.png';
+import BG from './assets/images/BG.png';
+import trend_1 from './assets/images/trend_1.png'
+import trend_2 from './assets/images/trend_2.png'
+import trend_3 from './assets/images/trend_3.png'
 
 let nav_items = [
     {path :'/' , element:'Home' } ,
@@ -25,6 +29,10 @@ let nav_items = [
 let site_images = {
     logo , 
     banner ,
+    BG ,
+    trend_1,
+    trend_2,
+    trend_3,
 }
 
 let productsShort = [

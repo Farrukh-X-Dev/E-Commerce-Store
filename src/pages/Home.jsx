@@ -4,12 +4,13 @@ import { BiPhoneCall } from 'react-icons/bi'
 import ProductShort from '../components/ProductShort'
 import ProductWide from '../components/ProductWide'
 import ForYou from '../components/ForYou'
+import Trending from '../components/Trending'
 
 const Home = () => {
   return (
     <>
   {/* Hero Section  */}
-    <div className='flex items-center justify-around h-[91vh]  bg-gray-200'>
+    <div className='flex items-center justify-around h-[91vh]  bg-gray-100'>
       {/* Left Section  */}
       <div className='w-[50%]'> 
         <p className="font-[Kaushan_script] text-2xl text-gray-700"> Starting At Only $0.5</p>
@@ -43,6 +44,7 @@ const Home = () => {
     {/* Just For You Section */}
 
     <ForYou data={ForyouProducts} />
+    <Trending data={site_images}/>
 
     </>
 
