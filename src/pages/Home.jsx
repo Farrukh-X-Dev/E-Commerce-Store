@@ -5,6 +5,7 @@ import ProductShort from '../components/ProductShort'
 import ProductWide from '../components/ProductWide'
 import ForYou from '../components/ForYou'
 import Trending from '../components/Trending'
+import Discount from '../components/Discount'
 
 const Home = () => {
   return (
@@ -45,6 +46,7 @@ const Home = () => {
 
     <ForYou data={ForyouProducts} />
     <Trending data={site_images}/>
+    <Discount data={site_images}/>
 
     </>
 

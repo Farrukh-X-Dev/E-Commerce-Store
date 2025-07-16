@@ -3,7 +3,15 @@
 
 .bg_Image {
     background: url('./assets/images/BG.png');
+    background-size: contain;      
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.bg{
+    background: url('./assets/images/BG_2.png');
     background-size: cover;      
     background-position: center; 
     background-repeat: no-repeat; 
+
 }

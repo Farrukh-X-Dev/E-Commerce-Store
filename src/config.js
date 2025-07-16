@@ -7,7 +7,6 @@ import bandana from './assets/images/bandana.png'
 import casual from './assets/images/casual.png'
 import belts from './assets/images/belts.png'
 import Belts from './assets/images/Belts.png';
-import HandsomeShirts from './assets/images/HandsomeShirts.png';
 import Scarf2 from './assets/images/Scarf2.png';
 import FashionPolo2 from './assets/images/FashionPolo2.png';
 import FashionPolo from './assets/images/FashionPolo.png';
@@ -18,6 +17,10 @@ import BG from './assets/images/BG.png';
 import trend_1 from './assets/images/trend_1.png'
 import trend_2 from './assets/images/trend_2.png'
 import trend_3 from './assets/images/trend_3.png'
+import discount from './assets/images/Discount.png'
+import Client_1 from './assets/images/Client_1.png' 
+import Client_2 from './assets/images/Client_2.png'
+import Client_3 from './assets/images/Client_3.png' 
 
 let nav_items = [
     {path :'/' , element:'Home' } ,
@@ -33,6 +36,10 @@ let site_images = {
     trend_1,
     trend_2,
     trend_3,
+    discount,
+    Client_1,
+    Client_2,
+    Client_3 
 }
 
 let productsShort = [
@@ -138,7 +145,14 @@ let ForyouProducts = [
     }
   ];
   
+let feedBack = [
+  {
+    name : 'Jhon Smith' ,
+    date: '18: August: 2023',
+    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.'
+  }
+]
 
-export {nav_items , site_images , productsShort , productsLong , ForyouProducts}
+export {nav_items , site_images , productsShort , productsLong , ForyouProducts   }
 
 
