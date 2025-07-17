@@ -18,9 +18,7 @@ import trend_1 from './assets/images/trend_1.png'
 import trend_2 from './assets/images/trend_2.png'
 import trend_3 from './assets/images/trend_3.png'
 import discount from './assets/images/Discount.png'
-import Client_1 from './assets/images/Client_1.png' 
-import Client_2 from './assets/images/Client_2.png'
-import Client_3 from './assets/images/Client_3.png' 
+ 
 
 let nav_items = [
     {path :'/' , element:'Home' } ,
@@ -36,10 +34,7 @@ let site_images = {
     trend_1,
     trend_2,
     trend_3,
-    discount,
-    Client_1,
-    Client_2,
-    Client_3 
+    discount
 }
 
 let productsShort = [

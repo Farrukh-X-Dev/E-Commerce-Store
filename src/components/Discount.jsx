@@ -1,11 +1,18 @@
 import React from 'react'
+import Client_1 from '../assets/images/Client_1.png' 
+import Client_2 from '../assets/images/Client_2.png'
+import Client_3 from '../assets/images/Client_3.png'
+import { SiComma } from 'react-icons/si'
+import { BiStar } from 'react-icons/bi'
 
 const Discount = ({data } ) => {
     let Details =  {
           name : 'Jhon Smith' ,
-          date: '18: August: 2023',
-          description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.'
+          date: '18 : August : 2023',
+          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
         }
+    let images= [ Client_1 , Client_2 , Client_3 ]
+    
       
   return (
     <>
@@ -27,18 +34,29 @@ const Discount = ({data } ) => {
 
         {/* Feedback Section  */}
 
-    <div className='flex justify-center gap-10 bg h-[90vh] mb-20'>
-       {Array(3).fill('').map((items,index)=>(
-        <div>
-            <img src={data.Client_1} alt='Client_Image_1' />
-            <p>{Details.description}</p>
+    <div className='flex justify-center items-center  gap-10 bg h-[90vh] mb-20 border  '>
+       {images.map((items,index)=>(
+        <div className='border h-[80%] w-[23%] bg-white rounded-md'>
+            <div className='flex gap-4 border justify-center items-center h-[40%]'>
+            <div className='flex items-end h-full '> <SiComma size={30} /> </div>
+            
+            <div className='border-2 p-5 rounded-full relative'>
+            <div className="absolute w-4 h-4 bg-orange-500 rounded-full -left-1 top-[65%] transform -translate-y-1/2"></div>
+            <img src={items} alt='Client_Image_1' className='items-center' />
+            <div className="absolute w-4 h-4 bg-orange-500 rounded-full -right-1 top-[30%] transform -translate-y-1/2"></div>
+            </div>
+
+            <div className='flex items-start  h-full '> <SiComma size={30} /> </div>
+            </div>
+            <p className='text-center text-lg p-5 bg-[#fd491c] text-white font-semibold' >{Details.name}</p>
+            <div className='flex justify-center gap-2 mt-2 '> {Array(5).fill('').map(()=>( <BiStar size={20}  />))} </div>
+            <p className='text-center text-lg pt-2 '>{Details.date}</p>
+            <p className='text-center text-lg pt-5 px-1 '>{Details.description}</p>       
         </div> 
-
-       ))
-
-       } 
-
+       ))} 
     </div>
+
+    {/* Benifits Section  */}
     </>
 
 
