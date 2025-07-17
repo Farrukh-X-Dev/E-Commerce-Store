@@ -4,6 +4,9 @@ import Client_2 from '../assets/images/Client_2.png'
 import Client_3 from '../assets/images/Client_3.png'
 import { SiComma } from 'react-icons/si'
 import { BiStar } from 'react-icons/bi'
+import { TbReplace } from 'react-icons/tb'
+import { FaCartArrowDown } from 'react-icons/fa'
+import { PiPackageDuotone } from 'react-icons/pi'
 
 const Discount = ({data } ) => {
     let Details =  {
@@ -13,6 +16,20 @@ const Discount = ({data } ) => {
         }
     let images= [ Client_1 , Client_2 , Client_3 ]
     
+    let Benifits = [
+      {
+        icon : TbReplace,
+        description : " Easy 7 days replacement Only If the product is faulty"
+      },
+      {
+        icon : FaCartArrowDown,
+        description : "Free Home Delivery We don't sell your info"
+      },
+      {
+        icon : PiPackageDuotone,
+        description : "Quality Ensured Every product's quality is ensured"
+      }
+    ]
       
   return (
     <>
@@ -57,6 +74,15 @@ const Discount = ({data } ) => {
     </div>
 
     {/* Benifits Section  */}
+      <div>
+        {Benifits.map((items,index)=>(
+          <>
+          <div>{ <items.icon />}</div>
+          <div> {items.description}</div>
+          </>
+        ))}
+      </div>
+
     </>
 
 
