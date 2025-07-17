@@ -74,12 +74,14 @@ const Discount = ({data } ) => {
     </div>
 
     {/* Benifits Section  */}
-      <div>
+      <div className='flex gap-10 justify-around px-10 mb-10   '>
         {Benifits.map((items,index)=>(
-          <>
-          <div>{ <items.icon />}</div>
-          <div> {items.description}</div>
-          </>
+          <div className='flex gap-4 items-center '>
+          <div className='border px-10 py-8 rounded-tl-3xl rounded-br-3xl bg-[#fd491c] border-none text-white'>
+            { <items.icon size={25}/>}
+            </div>
+          <div className=''> {items.description}</div>
+          </div>
         ))}
       </div>
 
