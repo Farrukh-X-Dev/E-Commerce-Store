@@ -7,14 +7,18 @@ import { BiStar } from 'react-icons/bi'
 import { TbReplace } from 'react-icons/tb'
 import { FaCartArrowDown } from 'react-icons/fa'
 import { PiPackageDuotone } from 'react-icons/pi'
+import { toast  , ToastContainer} from 'react-toastify'
 
 const Discount = ({data } ) => {
     let Details =  {
           name : 'Jhon Smith' ,
           date: '18 : August : 2023',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-        }
-    let images= [ Client_1 , Client_2 , Client_3 ]
+    }
+
+    let images= [ 
+      Client_1 , Client_2 , Client_3
+     ]
     
     let Benifits = [
       {
@@ -53,14 +57,14 @@ const Discount = ({data } ) => {
 
     <div className='flex justify-center items-center  gap-10 bg h-[90vh] mb-20 border  '>
        {images.map((items,index)=>(
-        <div className='border h-[80%] w-[23%] bg-white rounded-md'>
+        <div className='border h-[35rem] w-[23%] bg-white rounded-md'>
             <div className='flex gap-4 border justify-center items-center h-[40%]'>
             <div className='flex items-end h-full '> <SiComma size={30} /> </div>
             
             <div className='border-2 p-5 rounded-full relative'>
             <div className="absolute w-4 h-4 bg-orange-500 rounded-full -left-1 top-[65%] transform -translate-y-1/2"></div>
-            <img src={items} alt='Client_Image_1' className='items-center' />
             <div className="absolute w-4 h-4 bg-orange-500 rounded-full -right-1 top-[30%] transform -translate-y-1/2"></div>
+            <img src={items} alt='Client_Image_1' className='items-center' />
             </div>
 
             <div className='flex items-start  h-full '> <SiComma size={30} /> </div>
@@ -85,10 +89,12 @@ const Discount = ({data } ) => {
         ))}
       </div>
 
+
     </>
 
 
   )
 }
 
+{/* <button onClick={() => toast.success("Wow so easy!")} className='bg-gray-600'>Notify!</button> */}
 export default Discount

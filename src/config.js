@@ -148,6 +148,12 @@ let feedBack = [
   }
 ]
 
+
+let copyright = {
+  text: ""
+}
+
+
 export {nav_items , site_images , productsShort , productsLong , ForyouProducts   }
 
 

@@ -6,6 +6,8 @@ import { nav_items } from '../config';
 import Collection from '../pages/Collection';
 import { Route, Routes } from 'react-router-dom'
 import PageNotFound from '../pages/PageNotFound';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
 
 const Router = () => {
     
@@ -15,6 +17,8 @@ const Router = () => {
         <Route path={nav_items[1].path} element={<About />}/>
         <Route path={nav_items[2].path} element={<Collection />}/>
         <Route path={nav_items[3].path} element={<Shop />}/>
+        <Route path='/login' element={<Login />}/>
+        <Route path='/signup' element={<Signup />}/>
         <Route path='/*' element={<PageNotFound />}/>
     </Routes>
 
