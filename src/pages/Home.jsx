@@ -51,7 +51,7 @@ const Home = () => {
         <ProductShort Products={productsShort.slice(0, 2)} />
         <ProductWide Products={productsLong.slice(0, 1)} />
       </div>
-      <div className="mt-10 flex w-full justify-center gap-10 ">
+      <div className="mt-10 flex justify-center items-center gap-10 mx-auto ">
         <ProductWide Products={productsLong.slice(1, 2)} />
         <ProductShort Products={productsShort.slice(2, 4)} />
       </div>

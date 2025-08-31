@@ -20,13 +20,6 @@ import trend_3 from './assets/images/trend_3.png'
 import discount from './assets/images/Discount.png'
  
 
-let nav_items = [
-    {path :'/' , element:'Home' } ,
-    {path :'/about' , element:'About' } ,
-    {path :'/collection' , element:'Collection' } ,
-    {path :'/shop' , element:'Shop' } ,
-]
-
 let site_images = {
     logo , 
     banner ,
@@ -37,123 +30,265 @@ let site_images = {
     discount
 }
 
-let productsShort = [
-    {
-        title : 'tanks' ,
-        image : tanks,
-        rating: 4.5
-    },
-    {
-        title : 't-shirts' ,
-        image : tshirt,
-        rating: 4.5
-    }, 
-    {
-        title : 'bandana' ,
-        image : bandana,
-        rating: 4.5
-    },
-    {
-        title : 'men belts' ,
-        image : belts,
-        rating: 4.5
-    },
+let nav_items = [
+    {path :'/' , element:'Home' } ,
+    {path :'/about' , element:'About' } ,
+    {path :'/collection' , element:'Collection' } ,
+    {path :'/shop' , element:'Shop' } ,
 ]
+
+let productsShort = [
+  {
+    id: 1,
+    title: 'tanks',
+    image: tanks,
+    rating: 4.5
+  },
+  {
+    id: 2,
+    title: 't-shirts',
+    image: tshirt,
+    rating: 4.5
+  },
+  {
+    id: 3,
+    title: 'bandana',
+    image: bandana,
+    rating: 4.5
+  },
+  {
+    id: 4,
+    title: 'men belts',
+    image: belts,
+    rating: 4.5
+  },
+];
 
 let productsLong = [
-    {
-        title : 'polo shirts' ,
-        image : polo,
-        rating: 4.5
-    },
-    {
-        title : 'casual shirts' ,
-        image : casual,
-        rating: 4.5
-    },
-]
+  {
+    id: 5,
+    title: 'polo shirts',
+    image: polo,
+    rating: 4.5
+  },
+  {
+    id: 6,
+    title: 'casual shirts',
+    image: casual,
+    rating: 4.5
+  },
+];
 
 let ForyouProducts = [
-    {
-      title: 'Gym Tank-Top',
-      price: '$5',
-      offPrice: '$8',
-      rating: 4.1,
-      category: 'Tanks',
-      image: mensTanks
-    },
-    {
-      title: 'Beautiful Scarf',
-      price: '$2',
-      offPrice: '$5',
-      rating: 4.3,
-      category: 'Bandana',
-      image: Scarf
-    },
-    {
-      title: 'Fashion Polo Shirt',
-      price: '$4',
-      offPrice: '$5',
-      rating: 4.2,
-      category: 'Polo Shirts',
-      image: PoloShirt
-    },
-    {
-      title: 'Fashion polo shirt',
-      price: '$4',
-      offPrice: '$5',
-      rating: 4.4,
-      category: 'Polo Shirts',
-      image: FashionPolo
-    },
-    {
-      title: 'Formal Shirt Set',
-      price: '$3',
-      offPrice: '$5',
-      rating: 4.0,
-      category: 'Casual Shirts',
-      image: FashionPolo2
-    },
-    {
-      title: 'Handsome Shirt',
-      price: '$1',
-      offPrice: '$5',
-      rating: 3.9,
-      category: 'T-Shirts',
-      image: Scarf2
-    },
-    {
-      title: 'Checked Casual Shirt',
-      price: '$2',
-      offPrice: '$5',
-      rating: 4.5,
-      category: 'Casual Shirts',
-      image: casual
-    },
-    {
-      title: 'Leather Belt',
-      price: '$3',
-      offPrice: '$5',
-      rating: 4.6,
-      category: 'Mens Belts',
-      image: Belts
-    }
-  ];
-  
-let feedBack = [
   {
-    name : 'Jhon Smith' ,
-    date: '18: August: 2023',
-    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.'
+    id: 7,
+    title: 'Gym Tank-Top',
+    price: '$5',
+    offPrice: '$8',
+    rating: 4.1,
+    category: 'Tanks',
+    image: mensTanks
+  },
+  {
+    id: 8,
+    title: 'Beautiful Scarf',
+    price: '$2',
+    offPrice: '$5',
+    rating: 4.3,
+    category: 'Bandana',
+    image: Scarf
+  },
+  {
+    id: 9,
+    title: 'Fashion Polo Shirt',
+    price: '$4',
+    offPrice: '$5',
+    rating: 4.2,
+    category: 'Polo Shirts',
+    image: PoloShirt
+  },
+  {
+    id: 10,
+    title: 'Fashion polo shirt',
+    price: '$4',
+    offPrice: '$5',
+    rating: 4.4,
+    category: 'Polo Shirts',
+    image: FashionPolo
+  },
+  {
+    id: 11,
+    title: 'Formal Shirt Set',
+    price: '$3',
+    offPrice: '$5',
+    rating: 4.0,
+    category: 'Casual Shirts',
+    image: FashionPolo2
+  },
+  {
+    id: 12,
+    title: 'Handsome Shirt',
+    price: '$1',
+    offPrice: '$5',
+    rating: 3.9,
+    category: 'T-Shirts',
+    image: Scarf2
+  },
+  {
+    id: 13,
+    title: 'Checked Casual Shirt',
+    price: '$2',
+    offPrice: '$5',
+    rating: 4.5,
+    category: 'Casual Shirts',
+    image: casual
+  },
+  {
+    id: 14,
+    title: 'Leather Belt',
+    price: '$3',
+    offPrice: '$5',
+    rating: 4.6,
+    category: 'Mens Belts',
+    image: Belts
+  },
+];
+
+let allProducts = [
+  // From productsShort
+  {
+    id: 1,
+    title: 'Tanks',
+    image: tanks,
+    rating: 4.5,
+    category: 'Tanks',
+    price: null,
+    offPrice: null
+  },
+  {
+    id: 2,
+    title: 'T-Shirts',
+    image: tshirt,
+    rating: 4.5,
+    category: 'T-Shirts',
+    price: null,
+    offPrice: null
+  },
+  {
+    id: 3,
+    title: 'Bandana',
+    image: bandana,
+    rating: 4.5,
+    category: 'Bandana',
+    price: null,
+    offPrice: null
+  },
+  {
+    id: 4,
+    title: 'Men Belts',
+    image: belts,
+    rating: 4.5,
+    category: 'Mens Belts',
+    price: null,
+    offPrice: null
+  },
+
+  // From productsLong
+  {
+    id: 5,
+    title: 'Polo Shirts',
+    image: polo,
+    rating: 4.5,
+    category: 'Polo Shirts',
+    price: null,
+    offPrice: null
+  },
+  {
+    id: 6,
+    title: 'Casual Shirts',
+    image: casual,
+    rating: 4.5,
+    category: 'Casual Shirts',
+    price: null,
+    offPrice: null
+  },
+
+  // From ForyouProducts
+  {
+    id: 7,
+    title: 'Gym Tank-Top',
+    price: '$5',
+    offPrice: '$8',
+    rating: 4.1,
+    category: 'Tanks',
+    image: mensTanks
+  },
+  {
+    id: 8,
+    title: 'Beautiful Scarf',
+    price: '$2',
+    offPrice: '$5',
+    rating: 4.3,
+    category: 'Bandana',
+    image: Scarf
+  },
+  {
+    id: 9,
+    title: 'Fashion Polo Shirt',
+    price: '$4',
+    offPrice: '$5',
+    rating: 4.2,
+    category: 'Polo Shirts',
+    image: PoloShirt
+  },
+  {
+    id: 10,
+    title: 'Fashion Polo Shirt',
+    price: '$4',
+    offPrice: '$5',
+    rating: 4.4,
+    category: 'Polo Shirts',
+    image: FashionPolo
+  },
+  {
+    id: 11,
+    title: 'Formal Shirt Set',
+    price: '$3',
+    offPrice: '$5',
+    rating: 4.0,
+    category: 'Casual Shirts',
+    image: FashionPolo2
+  },
+  {
+    id: 12,
+    title: 'Handsome Shirt',
+    price: '$1',
+    offPrice: '$5',
+    rating: 3.9,
+    category: 'T-Shirts',
+    image: Scarf2
+  },
+  {
+    id: 13,
+    title: 'Checked Casual Shirt',
+    price: '$2',
+    offPrice: '$5',
+    rating: 4.5,
+    category: 'Casual Shirts',
+    image: casual
+  },
+  {
+    id: 14,
+    title: 'Leather Belt',
+    price: '$3',
+    offPrice: '$5',
+    rating: 4.6,
+    category: 'Mens Belts',
+    image: Belts
   }
-]
+];
 
 
-let copyright = {
-  text: ""
-}
-
-
-export {nav_items , site_images , productsShort , productsLong , ForyouProducts   }
+export {nav_items , site_images , productsShort , productsLong , ForyouProducts , allProducts  }
 
 

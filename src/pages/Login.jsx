@@ -22,6 +22,7 @@ const Login = () => {
     signInWithEmailAndPassword(auth, userData.email, userData.password)
     .then((userCredential) => { 
       const user = userCredential.user.email.split('@')[0].toLocaleUpperCase();
+      localStorage.setItem('User' , true)
       toast('Hello ' + user)
       navigate('/')
 

@@ -28,6 +28,7 @@ const Signup = () => {
         .then((userCredential) => {
           const user = userCredential.user.email.split('@')[0].toUpperCase();
           toast( 'Hello ' + user )
+          localStorage.setItem('User' , true)
           navigate('/')
         })
         .catch((error) => {

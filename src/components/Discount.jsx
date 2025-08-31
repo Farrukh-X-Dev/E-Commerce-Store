@@ -53,11 +53,10 @@ const Discount = ({data } ) => {
         </div>
     </div>
 
-        {/* Feedback Section  */}
-
+      {/* Feedback Section  */}
     <div className='flex justify-center items-center  gap-10 bg h-[90vh] mb-20 border  '>
        {images.map((items,index)=>(
-        <div className='border h-[35rem] w-[23%] bg-white rounded-md'>
+        <div key={index} className='border h-[35rem] w-[23%] bg-white rounded-md'>
             <div className='flex gap-4 border justify-center items-center h-[40%]'>
             <div className='flex items-end h-full '> <SiComma size={30} /> </div>
             
@@ -70,17 +69,17 @@ const Discount = ({data } ) => {
             <div className='flex items-start  h-full '> <SiComma size={30} /> </div>
             </div>
             <p className='text-center text-lg p-5 bg-[#fd491c] text-white font-semibold' >{Details.name}</p>
-            <div className='flex justify-center gap-2 mt-2 '> {Array(5).fill('').map(()=>( <BiStar size={20}  />))} </div>
+            <div className='flex justify-center gap-2 mt-2 '> {Array(5).fill('').map((_ , index)=>( <BiStar size={20} key={index}  />))} </div>
             <p className='text-center text-lg pt-2 '>{Details.date}</p>
             <p className='text-center text-lg pt-5 px-1 '>{Details.description}</p>       
         </div> 
        ))} 
     </div>
 
-    {/* Benifits Section  */}
+      {/* Benifits Section  */}
       <div className='flex gap-10 justify-around px-10 mb-10   '>
         {Benifits.map((items,index)=>(
-          <div className='flex gap-4 items-center '>
+          <div key={index} className='flex gap-4 items-center '>
           <div className='border px-10 py-8 rounded-tl-3xl rounded-br-3xl bg-[#fd491c] border-none text-white'>
             { <items.icon size={25}/>}
             </div>
@@ -96,5 +95,4 @@ const Discount = ({data } ) => {
   )
 }
 
-{/* <button onClick={() => toast.success("Wow so easy!")} className='bg-gray-600'>Notify!</button> */}
 export default Discount
