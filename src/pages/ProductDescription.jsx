@@ -1,26 +1,64 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { allProducts } from "../config";
 import { useParams } from "react-router-dom";
+import { ProductProvider } from "../context/ContextApi";
+import { toast } from "react-toastify";
 
 const ProductDescription = () => {
 
-    let {id} = useParams()
-    let [product , setProduct] = useState([])
+  let { id } = useParams()
+  let [current, setCurrent] = useState(0)
+  let [product, setProduct] = useState([])
 
-    useEffect(()=> {
-        return setProduct(allProducts.filter((items)=> {return id == items.id } ))
-    } , [id])
-    
-    
+  let {  setCartProducts,setQuantity, } = useContext(ProductProvider)
+
+  useEffect(() => {
+    setProduct(allProducts.find((items) => { return id == items.id }))
+  }, [id])
+
+  
+  let AddtoCart = () => {
+    if (current <= 0) return; 
+    setQuantity(prev => prev + current);
+    toast.success('Added To Cart')
+    setCartProducts((prevCart) => {
+      let exists = prevCart.find((item) => item.id === product.id);
+  
+      if (exists) {
+        return prevCart.map((item) =>
+          item.id === product.id
+            ? {
+  
+                ...item,
+                quantity: item.quantity + current, 
+                title: `${item.baseTitle} x${item.quantity + current}`,
+              }
+            : item
+        );
+      } else {
+        return [
+          ...prevCart,
+          {
+            ...product,
+            quantity: current,
+            baseTitle: product.title, 
+            title: `${product.title} x${current}`,
+          },
+        ];
+      }
+    });
+  
+  };
+  
+
   return (
-    product.map((items,index)=>(
-     <div className="bg-white " key={index}>
+    <div className="bg-white " >
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-wrap -mx-4">
           {/* Product Images */}
           <div className=" md:w-1/2 px-4 mb-8">
             <img
-              src={items.image}
+              src={product.image}
               alt="Product"
               className=" rounded-lg shadow-md mb-4 h-120 mx-auto"
             />
@@ -30,15 +68,15 @@ const ProductDescription = () => {
           {/* Product Details */}
           <div className="w-full md:w-1/2 px-4">
             <h2 className="text-3xl font-bold mb-2 text-[#fd491c]">
-              {items.title}
+              {product.title}
             </h2>
             <p className="text-gray-500 mb-4">SKU: WH100XM4</p>
 
             <div className="mb-4">
               <span className="text-2xl font-bold mr-2 text-[#fd491c]">
-              {items.price}
+                {product.price}
               </span>
-              <span className="text-gray-400 line-through">{items.offPrice}</span>
+              <span className="text-gray-400 line-through">{product.offPrice}</span>
             </div>
 
             {/* Rating */}
@@ -66,12 +104,12 @@ const ProductDescription = () => {
                     />
                   </svg>
                 ))}
-              <span className="ml-2 text-gray-600">{items.rating}</span>
+              <span className="ml-2 text-gray-600">{product.rating}</span>
             </div>
 
             <p className="text-gray-700 mb-6">
               Experience premium clothes quality and industry-leading trends
-               with this classic wear. Perfect for semi-formals and frequent travelers.
+              with this classic wear. Perfect for semi-formals and frequent travelers.
             </p>
 
             {/* Color Options */}
@@ -92,19 +130,17 @@ const ProductDescription = () => {
               >
                 Quantity:
               </label>
-              <input
-                type="number"
-                id="quantity"
-                name="quantity"
-                min="1"
-                defaultValue="1"
-                className="w-12 text-center rounded-md border-gray-300 shadow-sm focus:border-[#fd491c] focus:ring focus:ring-[#fd491c] focus:ring-opacity-50"
+              <input type="number" id="quantity" name="quantity" min="1" value={current}
+                onChange={(e) => setCurrent(Number(e.target.value))}
+                className="w-12 text-center rounded-md border-gray-300 shadow-sm focus:border-quantity[#fd491c] focus:ring
+               focus:ring-[#fd491c] focus:ring-opacity-50"
               />
+
             </div>
 
             {/* Buttons */}
             <div className="flex space-x-4 mb-6">
-              <button className="bg-[#fd491c] flex gap-2 items-center text-white px-6 py-2 rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-[#fd491c] focus:ring-offset-2">
+              <button onClick={AddtoCart} className="bg-[#fd491c] flex gap-2 items-center text-white px-6 py-2 rounded-md hover:bg-orange-600 ">
                 Add to Cart
               </button>
               <button className="bg-gray-200 flex gap-2 items-center text-gray-800 px-6 py-2 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2">
@@ -116,7 +152,6 @@ const ProductDescription = () => {
         </div>
       </div>
     </div>
-    ))
 
   );
 };

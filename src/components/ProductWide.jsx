@@ -1,5 +1,6 @@
 import React from 'react'
 import { BiStar } from 'react-icons/bi'
+import { Link } from 'react-router-dom'
 
 const ProductWide = ({Products}) => {
   return (
@@ -19,9 +20,9 @@ const ProductWide = ({Products}) => {
                   </div>
                   
                 </div>
-                <button className="px-3 h-10 bg-[#fd491c] rounded-md text-white">
+                <Link  to={`products/${items.id}`} className="px-2 py-3 hover:bg-orange-700  bg-[#fd491c] rounded-md text-white  my-auto">
                   Shop Now
-                </button>
+                </Link>
               </div>
             </div>
           ))}

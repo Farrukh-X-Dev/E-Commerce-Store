@@ -31,9 +31,9 @@ const ForYou = ({ data }) => {
 
         <div className=' flex flex-wrap justify-center gap-20 '>
           {filter.map((items, index) => (
-            <Link to={`products/${items.id}`}>
+            <Link to={`products/${items.id}` } key={index}>
             <div
-              key={index}
+              
               className="group bg-white p-3 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
             >
               <img

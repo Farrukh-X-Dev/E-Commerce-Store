@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { site_images, nav_items } from '../config.js'
 import { BiCart, BiLogoInstagramAlt, BiLogoTwitter, BiLogOut, BiLogoYoutube, BiSearch, BiStar } from 'react-icons/bi'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { ProductProvider } from '../context/ContextApi.jsx'
 
 const Navbar = () => {
 
   let navigate = useNavigate()
+  let {quantity} = useContext(ProductProvider);
+  
 
   let nav_icons = [
     { name: 'Search', icons: BiSearch },
@@ -33,14 +36,16 @@ const Navbar = () => {
     localStorage.setItem('User', false);
     navigate('/login')
   }
+  
+  let showCart = () => {
+    navigate('/cart')
+  }
 
+  
   let Searching = () => {
     toast.warning('Working on It')
   }
 
-  let showCart = () => {
-    toast.warning('Working on It')
-  }
 
   let showFavourites = () => {
     toast.warning('Working on It')
@@ -65,9 +70,10 @@ const Navbar = () => {
       <div className='flex gap-15 '>
         <div className='flex gap-4'>
           {nav_icons.map((icons, index) => (
-            <div key={index} onClick={actions[icons.name]?.()} className='p-3 bg-gray-200 rounded-full flex items-center gap-7 justify-center'>
-              {<icons.icons size={22} />}
-            </div>
+           <div key={index} onClick={actions[icons.name]?.()} className='p-3 relative z-2 bg-gray-200 rounded-full flex items-center gap-7 justify-center'>
+           {icons.name == 'Cart' ? <> <span className={`${quantity == 0 ? 'absolute' : 'bg-red-400 absolute p-[3px] -top-1 right-0 z-5 rounded-full'} ` }>
+            {quantity == 0  ? '' : quantity }</span>  <icons.icons size={22} className='z-8' /> </>: <icons.icons size={22} />}
+         </div>
           ))}
         </div>
 

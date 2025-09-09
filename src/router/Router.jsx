@@ -9,12 +9,13 @@ import PageNotFound from '../pages/PageNotFound';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import ProductDescription from '../pages/ProductDescription';
+import Cart from '../pages/Cart';
 
 const PrivateRoutes = () => {
-  let User = localStorage.getItem('User')
+  let User = JSON.parse(localStorage.getItem('User'))
   return (
     <>
-      {User ? <Outlet /> : <Navigate to='signup' />}
+      {User == true ? <Outlet /> : <Navigate to='signup' />}
     </>
   )
 }
@@ -28,6 +29,7 @@ const Router = () => {
         <Route path={nav_items[1].path} element={<About />} />
         <Route path={nav_items[2].path} element={<Collection />} />
         <Route path={nav_items[3].path} element={<Shop />} />
+        <Route path='/cart' element={<Cart />} />
         <Route path='/products/:id' element={<ProductDescription />} />
 
       </Route>
