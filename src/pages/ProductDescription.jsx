@@ -10,7 +10,7 @@ const ProductDescription = () => {
   let [current, setCurrent] = useState(0)
   let [product, setProduct] = useState([])
 
-  let {  setCartProducts,setQuantity, } = useContext(ProductProvider)
+  let {setCartProducts,setQuantity, setFavourites, setFavouritesCount} = useContext(ProductProvider)
 
   useEffect(() => {
     setProduct(allProducts.find((items) => { return id == items.id }))
@@ -48,6 +48,37 @@ const ProductDescription = () => {
       }
     });
   
+  };
+  
+  let AddtoFavourites = () => {
+    setFavouritesCount(prev => prev + 1);
+    toast.success("Added to Favourites");
+  
+    setFavourites((prevFav) => {
+      let exists = prevFav.find((item) => item.id === product.id);
+  
+      if (exists) {
+        return prevFav.map((item) =>
+          item.id === product.id
+            ? {
+                ...item,
+                quantity: item.quantity + 1, 
+                title: `${item.baseTitle} x${item.quantity + 1}`,
+              }
+            : item
+        );
+      } else {
+        return [
+          ...prevFav,
+          {
+            ...product,
+            quantity: 1, 
+            baseTitle: product.title,
+            title: `${product.title} x1`,
+          },
+        ];
+      }
+    });
   };
   
 
@@ -143,9 +174,9 @@ const ProductDescription = () => {
               <button onClick={AddtoCart} className="bg-[#fd491c] flex gap-2 items-center text-white px-6 py-2 rounded-md hover:bg-orange-600 ">
                 Add to Cart
               </button>
-              <button className="bg-gray-200 flex gap-2 items-center text-gray-800 px-6 py-2 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2">
-                Wishlist
-              </button>
+              <button onClick={AddtoFavourites} className="bg-gray-200 flex gap-2 items-center text-gray-800 px-6 py-2 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2">
+    Wishlist
+  </button>
             </div>
 
           </div>

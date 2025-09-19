@@ -33,7 +33,7 @@ let site_images = {
 let nav_items = [
     {path :'/' , element:'Home' } ,
     {path :'/about' , element:'About' } ,
-    {path :'/collection' , element:'Collection' } ,
+    {path :'/contact' , element:'Contact' } ,
     {path :'/shop' , element:'Shop' } ,
 ]
 
@@ -158,135 +158,135 @@ let allProducts = [
   // From productsShort
   {
     id: 1,
-    title: 'Tanks',
+    title: "Tanks",
     image: tanks,
-    rating: 4.5,
-    category: 'Tanks',
-    price: null,
-    offPrice: null
+    rating: 4.2,
+    category: "Tanks",
+    price: 12,
+    offPrice: 6, // 50% off
   },
   {
     id: 2,
-    title: 'T-Shirts',
+    title: "T-Shirts",
     image: tshirt,
-    rating: 4.5,
-    category: 'T-Shirts',
-    price: null,
-    offPrice: null
+    rating: 3.9,
+    category: "T-Shirts",
+    price: 15,
+    offPrice: 8, // ~47% off
   },
   {
     id: 3,
-    title: 'Bandana',
+    title: "Bandana",
     image: bandana,
-    rating: 4.5,
-    category: 'Bandana',
-    price: null,
-    offPrice: null
+    rating: 4.6,
+    category: "Bandana",
+    price: 8,
   },
   {
     id: 4,
-    title: 'Men Belts',
+    title: "Men Belts",
     image: belts,
-    rating: 4.5,
-    category: 'Mens Belts',
-    price: null,
-    offPrice: null
+    rating: 4.1,
+    category: "Mens Belts",
+    price: 20,
+    offPrice: 15, // 25% off
   },
 
   // From productsLong
   {
     id: 5,
-    title: 'Polo Shirts',
+    title: "Polo Shirts",
     image: polo,
-    rating: 4.5,
-    category: 'Polo Shirts',
-    price: null,
-    offPrice: null
+    rating: 4.7,
+    category: "Polo Shirts",
+    price: 18,
+    offPrice: 12, // ~33% off
   },
   {
     id: 6,
-    title: 'Casual Shirts',
+    title: "Casual Shirts",
     image: casual,
-    rating: 4.5,
-    category: 'Casual Shirts',
-    price: null,
-    offPrice: null
+    rating: 3.8,
+    category: "Casual Shirts",
+    price: 25,
+    offPrice: 20, // ~20% off
   },
 
   // From ForyouProducts
   {
     id: 7,
-    title: 'Gym Tank-Top',
-    price: '$5',
-    offPrice: '$8',
-    rating: 4.1,
-    category: 'Tanks',
-    image: mensTanks
+    title: "Gym Tank-Top",
+    image: mensTanks,
+    rating: 4.3,
+    category: "Tanks",
+    price: 10,
+    offPrice: 7, // 30% off
   },
   {
     id: 8,
-    title: 'Beautiful Scarf',
-    price: '$2',
-    offPrice: '$5',
-    rating: 4.3,
-    category: 'Bandana',
-    image: Scarf
+    title: "Beautiful Scarf",
+    image: Scarf,
+    rating: 4.0,
+    category: "Bandana",
+    price: 6,
+    offPrice: null, // no discount
   },
   {
     id: 9,
-    title: 'Fashion Polo Shirt',
-    price: '$4',
-    offPrice: '$5',
-    rating: 4.2,
-    category: 'Polo Shirts',
-    image: PoloShirt
+    title: "Fashion Polo Shirt",
+    image: PoloShirt,
+    rating: 4.5,
+    category: "Polo Shirts",
+    price: 14,
+    offPrice: null, // no discount
   },
   {
     id: 10,
-    title: 'Fashion Polo Shirt',
-    price: '$4',
-    offPrice: '$5',
-    rating: 4.4,
-    category: 'Polo Shirts',
-    image: FashionPolo
+    title: "Fashion Polo Shirt",
+    image: FashionPolo,
+    rating: 4.1,
+    category: "Polo Shirts",
+    price: 16,
+    offPrice: 8, // 50% off
   },
   {
     id: 11,
-    title: 'Formal Shirt Set',
-    price: '$3',
-    offPrice: '$5',
-    rating: 4.0,
-    category: 'Casual Shirts',
-    image: FashionPolo2
+    title: "Formal Shirt Set",
+    image: FashionPolo2,
+    rating: 3.7,
+    category: "Casual Shirts",
+    price: 22,
+    offPrice: null, // no discount
   },
   {
     id: 12,
-    title: 'Handsome Shirt',
-    price: '$1',
-    offPrice: '$5',
-    rating: 3.9,
-    category: 'T-Shirts',
-    image: Scarf2
+    title: "Handsome Shirt",
+    image: Scarf2,
+    rating: 4.4,
+    category: "T-Shirts",
+    price: 12,
+    offPrice: 3, // 75% off 🎯
   },
   {
     id: 13,
-    title: 'Checked Casual Shirt',
-    price: '$2',
-    offPrice: '$5',
-    rating: 4.5,
-    category: 'Casual Shirts',
-    image: casual
+    title: "Checked Casual Shirt",
+    image: casual,
+    rating: 4.0,
+    category: "Casual Shirts",
+    price: 18,
+    offPrice: null, // no discount
   },
   {
     id: 14,
-    title: 'Leather Belt',
-    price: '$3',
-    offPrice: '$5',
+    title: "Leather Belt",
+    image: Belts,
     rating: 4.6,
-    category: 'Mens Belts',
-    image: Belts
-  }
+    category: "Mens Belts",
+    price: 25,
+    offPrice: 15, // 40% off
+  },
 ];
+
 
 
 export {nav_items , site_images , productsShort , productsLong , ForyouProducts , allProducts  }

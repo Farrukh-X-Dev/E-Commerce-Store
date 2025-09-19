@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { ProductProvider } from '../context/ContextApi'
 import { BiX } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   let { cartProducts , setCartProducts , setQuantity , quantity } = useContext(ProductProvider)
@@ -15,6 +16,8 @@ const Cart = () => {
   }
   
   return (
+    <>
+    <h1 className="text-4xl font-bold text-[#fd491c] px-6 pt-12 ">Cart</h1>
     <div className='flex justify-center flex-wrap gap-10 '>
     {cartProducts.length > 0 ? cartProducts.map((items , index) => (
     <div key={index} className="bg-base-100 w-96 shadow-2xl my-3 relative ">
@@ -34,8 +37,17 @@ const Cart = () => {
         </div>
       </div>
     </div>
-    )) : <div className=' mt-50 text-xl text-gray-500'> Nothing Here ...</div>}
+    )) : <div className="text-center">
+    <p className="text-gray-500 mb-6">No items in your favourites yet.</p>
+    <Link
+      to="/shop"
+      className="bg-[#fd491c] text-white px-6 py-2 rounded-md hover:bg-orange-600"
+    >
+      Browse Products
+    </Link>
+  </div>}
     </div>
+    </>
   )
 }
 

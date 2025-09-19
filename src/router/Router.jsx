@@ -3,13 +3,14 @@ import Home from '../pages/Home'
 import Shop from '../pages/Shop';
 import About from '../pages/About';
 import { nav_items } from '../config';
-import Collection from '../pages/Collection';
+import Collection from '../pages/Contact';
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom'
 import PageNotFound from '../pages/PageNotFound';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import ProductDescription from '../pages/ProductDescription';
 import Cart from '../pages/Cart';
+import Favourites from '../pages/Favourites';
 
 const PrivateRoutes = () => {
   let User = JSON.parse(localStorage.getItem('User'))
@@ -30,6 +31,7 @@ const Router = () => {
         <Route path={nav_items[2].path} element={<Collection />} />
         <Route path={nav_items[3].path} element={<Shop />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/favourites' element={<Favourites />} />
         <Route path='/products/:id' element={<ProductDescription />} />
 
       </Route>
