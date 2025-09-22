@@ -6,6 +6,8 @@ import { BiLoader } from "react-icons/bi";
 
 
 const Contact = () => {
+  let documentTitle = "Contact - Om Mart";
+  document.title = documentTitle;
   const [formData, setFormData] = useState({
     name: "",
     email: "",

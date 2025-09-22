@@ -5,6 +5,8 @@ import { toast } from "react-toastify";
 
 const Favourites = () => {
   let { favourites, setFavourites, setFavouritesCount } = useContext(ProductProvider);
+  let documentTitle = "Favourites - Om Mart";
+  document.title = documentTitle;
 
   const removeFromFavourites = (id) => {
     setFavourites((prev) => prev.filter((item) => item.id !== id));
@@ -42,7 +44,7 @@ const Favourites = () => {
                 <h2 className="text-lg font-semibold text-gray-800 text-center">
                   {item.title}
                 </h2>
-                <p className="text-[#fd491c] font-bold mt-2">{item.price}</p>
+                <p className="text-[#fd491c] font-bold mt-2">${item.price}</p>
 
                 <div className="flex gap-3 mt-4">
                   <button

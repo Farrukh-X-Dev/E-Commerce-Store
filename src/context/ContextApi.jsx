@@ -6,15 +6,17 @@ let ProductProvider = createContext([])
 const ContextApi = ({children}) => {
   let [quantity , setQuantity] = useState(0)
   let [cartProducts , setCartProducts] = useState([])
-  const [favourites, setFavourites] = useState([]);
-  const [favouritesCount, setFavouritesCount] = useState(0);
+  let [Userquery, setUserquery] = useState("");
+  let [favourites, setFavourites] = useState([]);
+  let [favouritesCount, setFavouritesCount] = useState(0);
 
 
   let value = {
     cartProducts , setCartProducts ,
     quantity , setQuantity ,
     favourites, setFavourites ,
-    favouritesCount, setFavouritesCount
+    favouritesCount, setFavouritesCount,
+    Userquery, setUserquery
   }
 
   return <ProductProvider.Provider value={value} > {children} </ProductProvider.Provider>

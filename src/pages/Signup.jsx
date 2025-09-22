@@ -18,6 +18,8 @@ const Signup = () => {
     })
     const [Loader , setLoader] = useState(false)
     const navigate = useNavigate()
+    let documentTitle = "Sign up - Om Mart";
+    document.title = documentTitle;
 
     let submitHandler = (e) =>{
 

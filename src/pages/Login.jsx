@@ -15,6 +15,8 @@ const Login = () => {
   })
   const [loader, setLoader] = useState(false)
   const navigate = useNavigate()
+  let documentTitle = "Sign in - Om Mart";
+  document.title = documentTitle;
 
   let submitHandler = (e)=>{
     e.preventDefault()

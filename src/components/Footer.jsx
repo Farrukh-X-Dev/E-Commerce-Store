@@ -3,14 +3,15 @@ import { site_images } from "../config";
 import { BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { BiPhoneCall } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     let Footer_data ={
         information:[
-            { label: "Old city Street, USA", to: "#" },
+            { label: "Old city Street, USA", to: "/" },
             { label: "About us", to: "/about" },
             { label: "Check out", to: "/collection" },
-            { label: "Return and refund", href: "#" }
+            { label: "Return and refund", href: "/" }
         ],
 
         help : [
@@ -54,7 +55,7 @@ const Footer = () => {
             <h1 className="text-3xl font-bold mb-4">Information</h1>
             <div className="flex flex-col gap-4">
                {Footer_data.information.map((items,index)=>(
-              <div key={index}>{items.label}</div>
+              <Link key={index} to={items.to}>{items.label}</Link>
             ))}
             </div>
         </div>

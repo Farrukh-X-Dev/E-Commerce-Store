@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Home from '../pages/Home'
 import Shop from '../pages/Shop';
 import About from '../pages/About';
@@ -22,6 +22,10 @@ const PrivateRoutes = () => {
 }
 
 const Router = () => {
+  let pathname = window.location.pathname;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <Routes >

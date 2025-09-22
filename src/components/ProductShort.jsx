@@ -21,7 +21,7 @@ const ProductShort = ({ Products }) => {
                   </div>
                 </div>
 
-                <Link  to={`products/${items.id}`} className="px-2 py-2 bg-[#fd491c] rounded-md text-white text-xs my-auto hover:bg-orange-700">
+                <Link  to={`/products/${items.id}`} className="px-2 py-2 bg-[#fd491c] rounded-md text-white text-xs my-auto hover:bg-orange-700">
                   Shop Now
                 </Link>
               </div>

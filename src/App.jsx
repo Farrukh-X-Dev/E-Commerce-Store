@@ -10,7 +10,7 @@ const App = () => {
   return (
     <>
     { currentRoute.pathname == '/login' || currentRoute.pathname == '/signup' ? null :  <Navbar />}
-    <Router />
+     <Router /> 
     <ToastContainer />
     </>
   )

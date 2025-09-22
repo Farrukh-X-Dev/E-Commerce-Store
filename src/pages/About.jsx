@@ -5,29 +5,24 @@ import { BiHappy, BiRocket, BiStore } from "react-icons/bi";
 import head from "../assets/images/head.jpeg";
 
 const About = () => {
+  let documentTitle = "About - Om Mart";
+  document.title = documentTitle;
   return (
-    <div className="bg-gray-50 min-h-screen">
-      {/* Hero Section  */}
-<section
-  className="relative bg-fixed bg-cover bg-center bg-no-repeat h-[80vh] flex items-center justify-center"
-  style={{
-    backgroundImage:
-      "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600')",
-  }}
->
-  {/* Fade effect overlay */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-transparent"></div>
+    <div className="bg-gray-50 min-h-screen overflow-x-hidden">
+    {/* Hero Section  */}
+  <section className="relative bg-fixed bg-cover bg-center bg-no-repeat h-[80vh] flex items-center justify-center" style={{backgroundImage:"url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600')"}}>
+    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-transparent"></div>
+      <motion.div className="relative z-10 text-center text-white px-6" initial={{opacity:0,y:50}} animate={{opacity:1,y:0}} transition={{duration:1,ease:"easeOut"}}>
+   
+      <motion.h1 className="text-5xl font-extrabold mb-6" initial={{scale:0.8,opacity:0}} animate={{scale:1,opacity:1}} transition={{duration:0.8,delay:0.3}}>
+        About Us
+      </motion.h1>
 
-  <div className="relative z-10 text-center text-white px-6">
-    <h1 className="text-5xl font-extrabold mb-6">About Us</h1>
-    <p className="text-lg max-w-3xl mx-auto">
-      We are passionate about bringing you the best quality products with
-      unbeatable service.
-    </p>
-  </div>
-</section>
-
-
+      <motion.p className="text-lg max-w-3xl mx-auto" initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.8,delay:0.6}}>
+        We are passionate about bringing you the best quality products with unbeatable service.
+      </motion.p>
+    </motion.div>
+  </section>
 
       {/* Mission / Vision / Values */}
       <section className="py-16 container mx-auto px-6 grid md:grid-cols-3 gap-10">
@@ -51,6 +46,10 @@ const About = () => {
           <motion.div
             key={i}
             whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.2 }}
+            viewport={{ once: false, amount: 0.2 }}
             className="bg-white p-8 rounded-2xl shadow-lg text-center"
           >
             <div className="flex justify-center mb-4">{item.icon}</div>
@@ -65,16 +64,18 @@ const About = () => {
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
           <motion.img
             initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.2 }}
             src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800"
             alt="Our Story"
             className="rounded-2xl shadow-xl w-full md:w-1/2 object-cover"
           />
           <motion.div
             initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.2 }}
             className="md:w-1/2"
           >
             <h2 className="text-3xl font-bold text-[#fd491c] mb-4">
@@ -122,6 +123,10 @@ const About = () => {
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.2 }}
+                viewport={{ once: false, amount: 0.2 }}
                 className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center"
               >
                 <img
@@ -142,9 +147,10 @@ const About = () => {
       {/* Call to Action */}
       <section className="bg-[#fd491c] py-16 text-center text-white">
         <motion.h2
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: false, amount: 0.3 }}
           className="text-4xl font-extrabold mb-6"
         >
           Join Our Journey
@@ -154,7 +160,7 @@ const About = () => {
           before.
         </p>
         <Link
-          to="/shop-all"
+          to="/shop"
           className="bg-white text-[#fd491c] px-6 py-3 rounded-lg shadow-lg font-semibold hover:bg-gray-200"
         >
           Explore Collection

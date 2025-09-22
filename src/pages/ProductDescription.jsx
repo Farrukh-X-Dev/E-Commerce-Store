@@ -9,6 +9,8 @@ const ProductDescription = () => {
   let { id } = useParams()
   let [current, setCurrent] = useState(0)
   let [product, setProduct] = useState([])
+  let documentTitle =  product.title + ' - Om Mart';
+  document.title = documentTitle;
 
   let {setCartProducts,setQuantity, setFavourites, setFavouritesCount} = useContext(ProductProvider)
 

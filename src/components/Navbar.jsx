@@ -5,10 +5,12 @@ import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { ProductProvider } from '../context/ContextApi.jsx'
 
+
 const Navbar = () => {
 
   let navigate = useNavigate()
-  let {quantity , favouritesCount} = useContext(ProductProvider);
+  let {quantity , favouritesCount , Userquery, setUserquery} = useContext(ProductProvider);
+  let [searchActive, setSearchActive] = React.useState(true);
   let location = useLocation();
   
 
@@ -27,7 +29,6 @@ const Navbar = () => {
   ]
 
   const actions = {
-    Search: () => Searching,
     Cart: () => showCart,
     Star: () => showFavourites,
     LogOut: () => LogoutUser,
@@ -42,12 +43,6 @@ const Navbar = () => {
     navigate('/cart')
   }
 
-  
-  let Searching = () => {
-    toast.warning('Working on It')
-  }
-
-
   let showFavourites = () => {
     navigate('/favourites')
   }
@@ -58,13 +53,16 @@ const Navbar = () => {
 
       <div className='flex gap-10 text-xl'>
         {nav_items.map((name, index) => (
-          <NavLink className={({ isActive }) => isActive ? 'text-[#fd491c]' : ''} key={index} to={name.path}>{name.element}</NavLink>
+          <NavLink className={({ isActive }) => isActive ? 'text-[#fd491c]' : '' } key={index} to={name.path}>{name.element}</NavLink>
         ))}
       </div>
 
       <div className='flex gap-4  '>
         {social_icons.map((icons, index) => (
-          <div key={index} className='p-3 bg-gray-200 rounded-full flex items-center justify-center  '> {<icons.name size={22} />}  </div>
+          <a target='_blank' key={index} className='p-3 bg-gray-200 rounded-full flex items-center justify-center'
+          href='https://farrukh-portfolio-01.vercel.app'> 
+          {<icons.name size={22} />} 
+           </a>
         ))}
       </div>
 
@@ -90,6 +88,20 @@ const Navbar = () => {
         </span>
         <icons.icons size={22} />
       </>
+    )  : icons.name === "Search" ? (
+        <div className="flex items-center relative">
+             <input
+                type="text"
+                placeholder="Search..."
+                style={{ transformOrigin: 'right' }}
+                value={Userquery}
+                onChange={(e) => setUserquery(e.target.value)}
+                className={`transition-all duration-500 ease-in-outborder  text-sm outline-none text-gray-900
+               ${searchActive ? 'w-0 opacity-0 scale-0' : 'w-40 opacity-100 scale-100 pl-4'} 
+            `}
+                    />
+        <icons.icons size={22} onClick={()=> setSearchActive(!searchActive)} />
+      </div>
     ) : (
       <icons.icons size={22} />
     )}

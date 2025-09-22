@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kaushan+Script&display=swap');
 @import 'tailwindcss';
 
+html, body, #root {
+    overflow-x: hidden;
+  }  
 .bg_Image {
     background: url('./assets/images/BG.png');
     background-size: contain;      
     background-position: center; 
     background-repeat: no-repeat; 
 }
-
 .bg{
     background: url('./assets/images/BG_2.png');
     background-size: cover;      
@@ -15,3 +17,28 @@
     background-repeat: no-repeat; 
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f3f4f6; 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #fd491c; 
+    border-radius: 10px;
+    transition: background 0.3s ease;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e43c10; 
+  }
+  
+  
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #fd491c #f3f4f6;
+  }
+  

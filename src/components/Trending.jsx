@@ -3,7 +3,7 @@ import { FaRegArrowAltCircleRight } from 'react-icons/fa'
 
 const Trending = ({data}) => {
   return (
-    <div className='bg_Image h-[80vh] flex justify-between items-center '>
+    <div className='bg_Image h-[80vh] w-full flex justify-between items-center '>
         {/* left  */}
         <div className='pl-50'>
             <p className='text-xl text-gray-600 tracking-widest '>Best Sell</p>
